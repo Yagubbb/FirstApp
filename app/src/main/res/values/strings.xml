@@ -15,8 +15,8 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="new_account">New\nAccount</string>
-    <string name="name">NAME</string>
-    <string name="email">EMAIL</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
     <string name="not_the_first_time_here">Not the first time here? Log In</string>
     <string name="step_1">1/2\nsteps</string>
     <string name="step_2">2/2\nsteps</string>
