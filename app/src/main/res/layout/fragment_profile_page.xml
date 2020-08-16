@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/account_white"
+    android:paddingHorizontal="@dimen/default_margin">
+
+    <TextView
+        android:id="@+id/text_view_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/profile"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="5dp"
+        android:elevation="10dp"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline">
+
+        <TextView
+            android:id="@+id/text_view_account_name_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yagubbb"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/image_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit_2"
+            app:layout_constraintBottom_toBottomOf="@id/text_view_account_name_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_view_account_name_profile">
+
+        </ImageView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_view_profile_photo_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/image_edit"
+
+
+            app:layout_constraintStart_toStartOf="@id/text_view_account_name_profile"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.07"
+            app:layout_constraintWidth_percent="0.4">
+
+            <ImageView
+                android:id="@+id/image_view_profile_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/profile"
+                android:scaleType="centerCrop">
+
+            </ImageView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/text_view_full_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/default_orange"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/card_view_profile_photo_container"
+            app:layout_constraintStart_toStartOf="@id/text_view_account_name_profile"
+            app:layout_constraintTop_toBottomOf="@id/text_view_account_name_profile"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintVertical_bias="0.35"
+            app:layout_constraintHorizontal_bias="0"
+            android:text="@string/yaqub_quluzade">
+            
+        </TextView>
+        
+        <TextView
+            android:id="@+id/text_view_bio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bio"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/text_view_full_name"
+            app:layout_constraintTop_toBottomOf="@id/text_view_full_name"
+            app:layout_constraintVertical_bias="0.05">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_ipsum"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/text_view_bio"
+            app:layout_constraintTop_toBottomOf="@id/text_view_bio"
+            app:layout_constraintVertical_bias="0.03">
+
+        </TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

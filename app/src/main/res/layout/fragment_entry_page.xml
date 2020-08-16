@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/image_view_entry_ellipse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_ellipse_1"
+        app:layout_constraintBottom_toTopOf="@id/button_entry_log_in"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+
+
+        app:layout_constraintStart_toStartOf="@+id/button_entry_log_in"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <TextView
+        android:id="@+id/text_view_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_your_adventure"
+        android:textColor="@color/entry_page_dark"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/button_entry_log_in"
+        app:layout_constraintEnd_toEndOf="@id/button_entry_log_in"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@id/button_entry_log_in"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_entry_ellipse"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_entry_log_in"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/default_orange"
+        android:elevation="100dp"
+        android:padding="15dp"
+        android:text="@string/log_in"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84"
+        app:layout_constraintWidth_percent="0.67">
+
+
+    </com.google.android.material.button.MaterialButton>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

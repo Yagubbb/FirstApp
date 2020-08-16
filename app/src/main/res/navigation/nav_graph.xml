@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/entryPageFragment">
+    <fragment
+        android:id="@+id/entryPageFragment"
+        android:name="mooc.vandy.java4android.diamonds.firstapp.ui.fragments.entry.EntryPageFragment"
+        android:label="EntryPageFragment"
+        tools:layout="@layout/fragment_entry_page">
+        <action
+            android:id="@+id/action_entryPageFragment_to_loginPageFragment"
+            app:destination="@id/loginPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginPageFragment"
+        android:name="mooc.vandy.java4android.diamonds.firstapp.ui.fragments.login.LoginPageFragment"
+        android:label="LoginPageFragment"
+        tools:layout="@layout/fragment_login_page">
+        <action
+            android:id="@+id/action_loginPageFragment_to_registerPage1Fragment"
+            app:destination="@id/registerPage1Fragment" />
+        <action
+            android:id="@+id/action_loginPageFragment_to_containerFragment"
+            app:destination="@id/containerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPage1Fragment"
+        android:name="mooc.vandy.java4android.diamonds.firstapp.ui.fragments.register1.RegisterPage1Fragment"
+        android:label="RegisterPage1Fragment"
+        tools:layout="@layout/fragment_register_page_1">
+        <action
+            android:id="@+id/action_registerPage1Fragment_to_registerPage2Fragment"
+            app:destination="@id/registerPage2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPage2Fragment"
+        android:name="mooc.vandy.java4android.diamonds.firstapp.ui.fragments.register2.RegisterPage2Fragment"
+        android:label="RegisterPage2Fragment"
+        tools:layout="@layout/fragment_register_page_2"/>
+    <fragment
+        android:id="@+id/containerFragment"
+        android:name="mooc.vandy.java4android.diamonds.firstapp.ui.fragments.container.ContainerFragment"
+        android:label="ContainerFragment"
+        tools:layout="@layout/fragment_container"/>
+</navigation>

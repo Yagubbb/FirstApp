@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:elevation="10dp"
+    android:layout_marginBottom="22dp"
+    android:background="@drawable/bg_post"
+    android:paddingVertical="@dimen/default_margin">
+
+    <TextView
+        android:id="@+id/text_view_account_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:text="Yagubbb"
+        android:textColor="@color/default_orange"
+        android:textSize="12sp"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintEnd_toStartOf="@id/card_view_profile_photo_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/card_view_profile_photo_container"
+        app:layout_constraintBottom_toBottomOf="@id/card_view_profile_photo_container">
+
+    </TextView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_profile_photo_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/image_view_shared_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        >
+
+        <ImageView
+            android:id="@+id/image_view_profile_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/profile"
+            android:scaleType="centerCrop">
+
+        </ImageView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/text_view_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/card_view_profile_photo_container"
+        app:layout_constraintTop_toTopOf="@id/card_view_profile_photo_container"
+        app:layout_constraintBottom_toBottomOf="@id/card_view_profile_photo_container"
+        android:text="@string/time"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:textColor="@color/time"
+        >
+
+    </TextView>
+
+
+    <ImageView
+        android:id="@+id/image_view_shared_photo"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1.9:1"
+        app:layout_constraintTop_toBottomOf="@id/card_view_profile_photo_container">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/text_view_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:drawableStart="@drawable/ic_heart"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:text="140"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/text_view_shares"
+        app:layout_constraintStart_toStartOf="@id/image_view_shared_photo"
+        app:layout_constraintTop_toBottomOf="@id/image_view_shared_photo"
+        app:layout_constraintVertical_bias="0.5">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_view_shares"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_share"
+        android:drawablePadding="10dp"
+        android:text="343"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/text_view_likes"
+        app:layout_constraintEnd_toStartOf="@id/text_view_comments"
+        app:layout_constraintStart_toEndOf="@id/text_view_likes"
+        app:layout_constraintTop_toTopOf="@id/text_view_likes">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/text_view_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_message_square"
+        android:drawablePadding="10dp"
+        android:text="24"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/image_view_shared_photo"
+        app:layout_constraintStart_toEndOf="@id/text_view_shares"
+        app:layout_constraintTop_toTopOf="@id/text_view_shares">
+
+    </TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
