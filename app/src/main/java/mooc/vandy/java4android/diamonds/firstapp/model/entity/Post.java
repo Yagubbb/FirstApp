@@ -8,8 +8,8 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "posts")
 public class Post {
 
-    @PrimaryKey
     @NonNull
+    @PrimaryKey
     @ColumnInfo(name = "id")
     private String id;
 
@@ -22,14 +22,13 @@ public class Post {
     @ColumnInfo(name = "comments")
     private Boolean activatedComments;
 
-    public Post(@NonNull String id, String description, String accountID, Boolean comments) {
+    public Post(@NonNull String id, String description, String accountID, Boolean activatedComments) {
         this.id = id;
         this.description = description;
         this.accountID = accountID;
-        this.activatedComments = comments;
+        this.activatedComments = activatedComments;
     }
 
-    @NonNull
     public String getId() {
         return id;
     }

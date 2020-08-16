@@ -9,8 +9,9 @@ import androidx.room.RoomDatabase;
 import mooc.vandy.java4android.diamonds.firstapp.local.dao.AccountDao;
 import mooc.vandy.java4android.diamonds.firstapp.local.dao.PostDao;
 import mooc.vandy.java4android.diamonds.firstapp.model.entity.Account;
+import mooc.vandy.java4android.diamonds.firstapp.model.entity.Post;
 
-@Database(entities = {Account.class}, version = 1, exportSchema = false)
+@Database(entities = {Account.class, Post.class}, version = 1, exportSchema = false)
 
 public abstract class AppDatabase extends RoomDatabase {
 
