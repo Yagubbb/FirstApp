@@ -38,7 +38,11 @@
         android:id="@+id/registerPage2Fragment"
         android:name="mooc.vandy.java4android.diamonds.firstapp.ui.fragments.register2.RegisterPage2Fragment"
         android:label="RegisterPage2Fragment"
-        tools:layout="@layout/fragment_register_page_2"/>
+        tools:layout="@layout/fragment_register_page_2">
+        <action
+            android:id="@+id/action_registerPage2Fragment_to_containerFragment"
+            app:destination="@id/containerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/containerFragment"
         android:name="mooc.vandy.java4android.diamonds.firstapp.ui.fragments.container.ContainerFragment"

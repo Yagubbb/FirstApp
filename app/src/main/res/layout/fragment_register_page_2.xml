@@ -30,26 +30,26 @@
         android:textSize="24sp"
         android:textStyle="bold"
 
-        app:layout_constraintBottom_toTopOf="@id/text_input_layout"
-        app:layout_constraintEnd_toEndOf="@id/text_input_layout"
+        app:layout_constraintBottom_toTopOf="@id/edit_text_new_password"
+        app:layout_constraintEnd_toEndOf="@id/edit_text_new_password"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="@id/text_input_layout"
+        app:layout_constraintStart_toStartOf="@id/edit_text_new_password"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.7"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
-        android:id="@+id/text_view_steps_1"
+        android:id="@+id/text_view_steps_2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:gravity="end"
         android:text="@string/step_2"
         android:textColor="@color/white"
-        android:gravity="end"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintTop_toTopOf="@id/text_view_new_account"
-        app:layout_constraintEnd_toEndOf="@id/text_input_layout"
-        app:layout_constraintStart_toEndOf="@id/text_view_new_account"
         app:layout_constraintBottom_toBottomOf="@id/text_view_new_account"
+        app:layout_constraintEnd_toEndOf="@id/edit_text_new_password"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@id/text_view_new_account"
+        app:layout_constraintTop_toTopOf="@id/text_view_new_account"
         app:layout_constraintVertical_bias="1"
 
         >
@@ -57,10 +57,16 @@
     </TextView>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout"
+    <EditText
+        android:id="@+id/edit_text_new_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+
+        android:textColor="@color/default_orange"
+        android:textColorHint="@color/edit_text"
+        android:theme="@style/defaultEdit"
         app:layout_constraintBottom_toTopOf="@+id/button_register_page_2_sign_up"
         app:layout_constraintEnd_toEndOf="@id/button_register_page_2_sign_up"
         app:layout_constraintStart_toStartOf="@id/button_register_page_2_sign_up"
@@ -68,49 +74,30 @@
         app:layout_constraintVertical_bias="0.6"
         app:layout_constraintVertical_chainStyle="spread">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text_new_password"
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/password"
-            android:background="@color/background_dark"
 
+    </EditText>
 
-            >
-
-        </com.google.android.material.textfield.TextInputEditText>
-
-
-
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout_email"
+    <EditText
+        android:id="@+id/edit_text_new_password_confirm"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:hint="@string/confirm_password"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+
+        android:textColor="@color/default_orange"
+        android:textColorHint="@color/edit_text"
+        android:theme="@style/defaultEdit"
         app:layout_constraintBottom_toTopOf="@+id/button_register_page_2_sign_up"
         app:layout_constraintEnd_toEndOf="@id/button_register_page_2_sign_up"
         app:layout_constraintStart_toStartOf="@id/button_register_page_2_sign_up"
-        app:layout_constraintTop_toBottomOf="@id/text_input_layout"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_new_password"
         app:layout_constraintVertical_bias="0.3"
+
         app:layout_constraintVertical_chainStyle="spread">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text_new_password_confirm"
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/confirm_password"
-            android:background="@color/background_dark"
-            android:textColorHint="@color/default_orange"
 
-            >
-
-        </com.google.android.material.textfield.TextInputEditText>
-
-
-
-    </com.google.android.material.textfield.TextInputLayout>
+    </EditText>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_register_page_2_sign_up"

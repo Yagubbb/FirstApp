@@ -112,7 +112,7 @@
         </ImageView>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@id/text_input_layout"
+            android:id="@id/edit_text_new_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -139,10 +139,10 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/text_input_layout"
+            app:layout_constraintStart_toStartOf="@id/edit_text_new_password"
             app:layout_constraintVertical_bias="0.15"
             app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintTop_toBottomOf="@id/text_input_layout">
+            app:layout_constraintTop_toBottomOf="@id/edit_text_new_password">
 
         </TextView>
 

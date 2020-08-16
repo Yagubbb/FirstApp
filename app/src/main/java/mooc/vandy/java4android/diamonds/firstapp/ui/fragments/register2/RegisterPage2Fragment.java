@@ -1,10 +1,15 @@
 package mooc.vandy.java4android.diamonds.firstapp.ui.fragments.register2;
 
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.AbsoluteSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,7 +20,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -31,9 +35,10 @@ public class RegisterPage2Fragment extends Fragment {
     private AccountDao accountDao;
 
     private ImageView imageViewBack;
+    private TextView textViewSecondStep;
     private MaterialButton buttonSignUp;
-    private TextInputEditText editTextNewPassword;
-    private TextInputEditText editTextConfirmNewPassword;
+    private EditText editTextNewPassword;
+    private EditText editTextConfirmNewPassword;
     private String newName;
     private String newEmail;
 
@@ -60,11 +65,13 @@ public class RegisterPage2Fragment extends Fragment {
                 newEmail = receivedEmail;
             }
         });
+        textViewSecondStep = view.findViewById(R.id.text_view_steps_2);
         imageViewBack = view.findViewById(R.id.image_view_register_page_2_back);
         buttonSignUp = view.findViewById(R.id.button_register_page_2_sign_up);
         editTextNewPassword = view.findViewById(R.id.edit_text_new_password);
         editTextConfirmNewPassword = view.findViewById(R.id.edit_text_new_password_confirm);
         configureDatabase();
+        setStepSecondText();
         setOnClickListeners();
     }
 
@@ -87,6 +94,7 @@ public class RegisterPage2Fragment extends Fragment {
                     AppDatabase.LOGGED_IN_USER_ID = accountDao.getId(newEmail);
                     Account newAccount = new Account(UUID.randomUUID().toString(), newName, newPassword, newEmail);
                     accountDao.insert(newAccount);
+                    navController.navigate(R.id.containerFragment);
                 }
             }
         });
@@ -134,6 +142,20 @@ public class RegisterPage2Fragment extends Fragment {
         } else
             Toast.makeText(getContext(), "Enter and confirm password", Toast.LENGTH_SHORT).show();
         return false;
+    }
+    private void setStepSecondText() {
+
+        String string = "2 /2\nsteps";
+
+        SpannableString spannableString = new SpannableString(string);
+
+        AbsoluteSizeSpan stringTwenty = new AbsoluteSizeSpan(20, true);
+        AbsoluteSizeSpan stringTwentyFour = new AbsoluteSizeSpan(24, true);
+
+        spannableString.setSpan(stringTwenty, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(stringTwentyFour, 1, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        textViewSecondStep.setText(spannableString);
     }
 }
 

@@ -1,11 +1,15 @@
 package mooc.vandy.java4android.diamonds.firstapp.ui.fragments.register1;
 
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.style.AbsoluteSizeSpan;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +21,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
 
 import mooc.vandy.java4android.diamonds.firstapp.R;
 import mooc.vandy.java4android.diamonds.firstapp.local.AppDatabase;
@@ -28,10 +31,11 @@ public class RegisterPage1Fragment extends Fragment {
     private AccountDao accountDao;
 
     private ImageView imageViewBack;
+    private TextView textViewFirstStep;
     private TextView textViewLogIn;
     private MaterialButton buttonNext;
-    private TextInputEditText editTextName;
-    private TextInputEditText editTextEmail;
+    private EditText editTextName;
+    private EditText editTextEmail;
 
     private NavController navController;
 
@@ -48,13 +52,14 @@ public class RegisterPage1Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        textViewFirstStep = view.findViewById(R.id.text_view_steps_2);
         textViewLogIn = view.findViewById(R.id.text_view_back_to_log_in);
         imageViewBack = view.findViewById(R.id.image_view_register_page_1_back);
         buttonNext = view.findViewById(R.id.button_register_page_2_sign_up);
-        editTextName = view.findViewById(R.id.edit_text_new_name);
-        editTextEmail = view.findViewById(R.id.edit_text_new_email);
+        editTextName = view.findViewById(R.id.edit_text_new_password);
+        editTextEmail = view.findViewById(R.id.edit_text_new_password_confirm);
          configureDatabase();
+         setStepFirstText();
         setOnClickListeners();
     }
 
@@ -111,5 +116,20 @@ public class RegisterPage1Fragment extends Fragment {
             }else Toast.makeText(getContext(), "Invalid email", Toast.LENGTH_SHORT).show();
         }else Toast.makeText(getContext(), "Enter your name", Toast.LENGTH_SHORT).show();
         return false;
+    }
+
+    private void setStepFirstText() {
+
+        String string = "1 /2\nsteps";
+
+        SpannableString spannableString = new SpannableString(string);
+
+        AbsoluteSizeSpan stringTwenty = new AbsoluteSizeSpan(20, true);
+        AbsoluteSizeSpan stringTwentyFour = new AbsoluteSizeSpan(24, true);
+
+        spannableString.setSpan(stringTwenty, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(stringTwentyFour, 1, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        textViewFirstStep.setText(spannableString);
     }
 }

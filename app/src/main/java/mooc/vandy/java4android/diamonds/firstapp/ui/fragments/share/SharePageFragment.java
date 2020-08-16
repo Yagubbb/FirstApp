@@ -65,7 +65,7 @@ public class SharePageFragment extends Fragment {
         imageViewProfilePhoto = view.findViewById(R.id.image_view_profile_photo);
         textViewName = view.findViewById(R.id.text_view_account_name_share_page);
         switchComments = view.findViewById(R.id.switch_comments);
-        textInputLayoutDescription = view.findViewById(R.id.text_input_layout);
+        textInputLayoutDescription = view.findViewById(R.id.edit_text_new_password);
         buttonShare = view.findViewById(R.id.button_share);
 
 
